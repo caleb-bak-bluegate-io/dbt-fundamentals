@@ -1,17 +1,16 @@
-{{ config (
-    materialized="table"
-)}}
 
-with 
+
+      create or replace transient table analytics.dbt_dbtakeehuna.dim_customers  as
+      (with 
 
 customers as (
 
-    select * from {{ ref( 'stg_customers' )}}
+    select * from analytics.dbt_dbtakeehuna.stg_customers
 ),
 
 orders as (
 
-    select * from {{ ref( 'stg_orders' )}}
+    select * from analytics.dbt_dbtakeehuna.stg_orders
 
 ),
 
@@ -48,3 +47,5 @@ final as (
 )
 
 select * from final
+      );
+    

@@ -1,8 +1,3 @@
-
-
-      create or replace transient table analytics.dbt_dbtakeehuna.dim_customers  as
-      (
-
 with 
 
 customers as (
@@ -49,5 +44,3 @@ final as (
 )
 
 select * from final
-      );
-    

@@ -1,18 +1,13 @@
-
-
-      create or replace transient table analytics.dbt_dbtakeehuna.dim_customers  as
-      (
-
 with 
 
 customers as (
 
-    select * from analytics.dbt_dbtakeehuna.stg_customers
+    select * from {{ ref( 'stg_customers' )}}
 ),
 
 orders as (
 
-    select * from analytics.dbt_dbtakeehuna.stg_orders
+    select * from {{ ref( 'stg_orders' )}}
 
 ),
 
@@ -49,5 +44,3 @@ final as (
 )
 
 select * from final
-      );
-    
