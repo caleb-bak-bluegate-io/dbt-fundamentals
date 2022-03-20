@@ -1,11 +1,11 @@
 with 
 
 payments as (
-    select * from {{ ref( 'stg_payments' )}}
+    select * from analytics.dbt_dbtakeehuna.stg_payments
 ),
 
 orders as (
-    select * from {{ ref( 'stg_orders' )}}
+    select * from analytics.dbt_dbtakeehuna.stg_orders
 ),
 
 order_payments as (
