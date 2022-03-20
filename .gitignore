@@ -1,4 +1,4 @@
-partial_parse.msgpack
+target/partial_parse.msgpack
 
 # Logs
 logs
