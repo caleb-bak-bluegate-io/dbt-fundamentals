@@ -1,5 +1,3 @@
-target/partial_parse.msgpack
-
 # Logs
 logs
 *.log
