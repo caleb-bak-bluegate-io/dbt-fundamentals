@@ -4,11 +4,18 @@ models:
     - name: stg_customers
       description: Staged customer data from our jaffle shop app.
       columns:
+        
         - name: customer_id
           description: Primary key for customers
           tests:
             - unique
             - not_null
+        
+        - name: first_name
+          description: First / given name of customer including middle name if any
+        
+        - name: last_name
+          description: Last / family name of customer including maiden name if any
     
     - name: stg_orders
       description: Staged order data from our jaffle shop app.
@@ -26,6 +33,9 @@ models:
             - relationships:
                 to: ref( 'stg_customers' )
                 field: customer_id
+
+        - name: order_date
+          description: Timestamp of this order
 
         - name: status
           description: "{{ doc( 'order_status' ) }}"
